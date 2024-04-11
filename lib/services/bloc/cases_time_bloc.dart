@@ -26,7 +26,7 @@ class CasesTimeBloc extends Bloc<CasesTimeEvent, CasesTimeState> {
   Future<void> caseTimeFetchData(Emitter<CasesTimeState> emit) async {
     emit(CasesTimeLoading());
     try {
-      final CasesTimeSeriesModal casesTimeSeriesModal = await casesTimeSeriesRepository
+      final SummaryModal casesTimeSeriesModal = await casesTimeSeriesRepository
           .fetchCasesTimeSeries();
       emit(CasesTimeSuccess(casesTimeSeriesModal));
     } catch (e) {

@@ -2,24 +2,25 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-
+import 'package:flutter/foundation.dart';
 part 'cases_time_series.dart';
-
 class CasesTimeSeriesRepository {
   final Dio _dio = Dio();
 
-  Future<CasesTimeSeriesModal> fetchCasesTimeSeries() async {
+  Future<SummaryModal> fetchCasesTimeSeries() async {
     try {
-      final response = await _dio.get("https://api.covid19india.org/data.json");
-
+      final response = await _dio.get(
+        "https://api.rootnet.in/covid19-in/stats/latest",
+      );
       if (response.statusCode == 200) {
-        final Map<String, dynamic> data = json.decode(response.data.toString());
-        final casesData = data['cases_time_series'] as List<dynamic>;
+        final Map<String, dynamic> data = response.data; // Access response data directly
+        if (kDebugMode) {
+          print(data);
+        }
 
-        final latestData = casesData.isNotEmpty ? casesData.last : null;
-
-        if (latestData != null) {
-          return CasesTimeSeriesModal.fromMap(latestData);
+        final casesData = data['data']['summary'] as Map<String, dynamic>; // Access summary data
+        if (casesData.isNotEmpty) {
+          return SummaryModal.fromMap(casesData);
         } else {
           throw Exception('No data available');
         }
@@ -27,6 +28,7 @@ class CasesTimeSeriesRepository {
         throw Exception('Failed to load data');
       }
     } catch (e) {
+      print('Error: $e');
       throw Exception('Error while fetching data: $e');
     }
   }

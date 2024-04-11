@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   controller: _controller,
                 );
               } else if (state is CasesTimeSuccess) {
-                final casesTimeModal = state.casesTimeSeriesModal;
+                final summaryModal = state.summaryModal;
 
                 return Column(
                   children: [
@@ -64,9 +64,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                     PieChart(
                       dataMap: {
-                        "Total": double.parse(casesTimeModal.totalconfirmed),
-                        "Recovered": double.parse(casesTimeModal.totalrecovered),
-                        "Deaths": double.parse(casesTimeModal.totaldeceased),
+                        "Total": summaryModal.total.toDouble(),
+                        "Recovered": summaryModal.discharged.toDouble(),
+                        "Deaths": summaryModal.deaths.toDouble(),
                       },
                       animationDuration: const Duration(milliseconds: 1200),
                       chartLegendSpacing: 32,
@@ -98,12 +98,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         child: Card(
                           child: Column(
                             children: [
-                              ReusableRow(title: 'Daily Confirmed', value: casesTimeModal.dailyconfirmed),
-                              ReusableRow(title: 'daily Deceased', value: casesTimeModal.dailydeceased),
-                              ReusableRow(title: 'daily Recovered', value: casesTimeModal.dailyrecovered),
-                              ReusableRow(title: 'Total Cases', value: casesTimeModal.totalconfirmed),
-                              ReusableRow(title: 'Deaths', value: casesTimeModal.totaldeceased),
-                              ReusableRow(title: 'Recovered', value: casesTimeModal.totalrecovered),
+                              ReusableRow(title: 'Daily Confirmed', value: summaryModal.confirmedCasesIndian.toString()),
+                              ReusableRow(title: 'daily Deceased', value: summaryModal.confirmedButLocationUnidentified.toString()),
+                              ReusableRow(title: 'daily Recovered', value: summaryModal.confirmedCasesForeign.toString()),
 
                             ],
                           ),

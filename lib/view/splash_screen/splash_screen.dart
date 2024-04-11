@@ -3,7 +3,6 @@ import 'package:covid_tracker/view/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-import 'package:shimmer/main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

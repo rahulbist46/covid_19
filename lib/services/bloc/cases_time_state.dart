@@ -15,11 +15,11 @@ class CasesTimeInitial extends CasesTimeState {}
 class CasesTimeLoading extends CasesTimeState {}
 
 class CasesTimeSuccess extends CasesTimeState {
-  CasesTimeSuccess(this.casesTimeSeriesModal);
-  final CasesTimeSeriesModal casesTimeSeriesModal;
+  const CasesTimeSuccess(this.summaryModal);
+  final SummaryModal summaryModal;
 
   @override
-  List<Object> get props => [casesTimeSeriesModal];
+  List<Object> get props => [summaryModal];
 }
 
 class CasesTimeError extends CasesTimeState {
