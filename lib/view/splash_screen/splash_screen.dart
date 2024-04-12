@@ -8,10 +8,10 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin{
+class SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin{
 
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 10),
