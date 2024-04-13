@@ -1,6 +1,6 @@
 part of 'unofficial_summery_bloc.dart';
 
-@immutable
+
 sealed class UnofficialSummeryState extends Equatable{
 
   const UnofficialSummeryState();

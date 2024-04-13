@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:covid_tracker/repositories/unofficial_summary/unofficial_summary_repo.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 
 part 'unofficial_summery_event.dart';
 part 'unofficial_summery_state.dart';

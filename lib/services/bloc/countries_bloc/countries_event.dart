@@ -1,6 +1,5 @@
 part of 'countries_bloc.dart';
 
-@immutable
 sealed class CountriesEvent extends Equatable{
   const CountriesEvent();
 
@@ -11,3 +10,9 @@ sealed class CountriesEvent extends Equatable{
 
 class FetchCountries extends CountriesEvent{}
 class ResetCountries extends CountriesEvent{}
+class CountriesSearchItem extends CountriesEvent{
+
+  final  String stSearch;
+  const CountriesSearchItem( this.stSearch);
+
+}

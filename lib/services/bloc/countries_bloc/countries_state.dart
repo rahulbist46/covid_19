@@ -9,13 +9,15 @@ sealed class CountriesState extends Equatable {
 final class CountriesInitial extends CountriesState {}
 final class CountriesLoading extends CountriesState {}
 final class CountriesSuccess extends CountriesState {
-  final List <CountriesModal> countriesModal;
+  final List<CountriesModal> countriesModal;
+  final List<CountriesModal> temCountriesModal;
 
-  const CountriesSuccess(this.countriesModal);
+  const CountriesSuccess(this.countriesModal, this.temCountriesModal);
 
   @override
-  List<Object> get props => [countriesModal];
+  List<Object> get props => [countriesModal, temCountriesModal];
 }
+
 
 class CountriesError extends CountriesState {
   const CountriesError(this.casesTimeError);
