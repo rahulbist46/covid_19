@@ -2,11 +2,13 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-part 'cases_time_series.dart';
-class CasesTimeSeriesRepository {
+part 'countries_modal.dart';
+
+
+class CountriesRepository {
   final Dio _dio = Dio();
 
-  Future<SummaryModal> fetchCasesTimeSeries() async {
+  Future<List<CountriesModal>> countriesDataFetch() async {
     try {
       final response = await _dio.get(
         "https://api.rootnet.in/covid19-in/stats/latest",
@@ -17,12 +19,14 @@ class CasesTimeSeriesRepository {
           print(data);
         }
 
-        final casesData = data['data']['summary'] as Map<String, dynamic>; // Access summary data
-        if (casesData.isNotEmpty) {
-          return SummaryModal.fromMap(casesData);
-        } else {
-          throw Exception('No data available');
+        final casesDataList = data['data']['regional'] as List<dynamic>;
+        List<CountriesModal> countries = [];
+
+        for (var caseData in casesDataList) {
+          countries.add(CountriesModal.fromMap(caseData));
         }
+
+        return countries;
       } else {
         throw Exception('Failed to load data');
       }
