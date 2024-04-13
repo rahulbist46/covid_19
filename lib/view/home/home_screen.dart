@@ -39,11 +39,11 @@ class HomePageState extends State<HomePage> {
         padding: EdgeInsets.all(11.0),
         child: Column(
           children: [
+            SizedBox(height: 90,),
             PieChartScreen(),
             SizedBox(height: 30,),
             AllData(),
             SizedBox(height: 30,),
-
             BottomButton(),
           ],
         ),
