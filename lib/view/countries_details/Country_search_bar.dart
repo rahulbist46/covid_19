@@ -19,7 +19,7 @@ class _SearchBarState extends State<SearchBar> {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(11.0),
             ),
-            hintText: 'Search with country name',
+            hintText: 'Search with name',
             suffixIcon:  const Icon(Icons.search) ,
 
 

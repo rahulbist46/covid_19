@@ -8,7 +8,7 @@ part 'countries_modal.dart';
 class CountriesRepository {
   final Dio _dio = Dio();
 
-  Future<CountriesModal> countriesDataFetch() async {
+  Future<List<CountriesModal>> countriesDataFetch() async {
     try {
       final response = await _dio.get(
         "https://api.rootnet.in/covid19-in/stats/latest",
@@ -19,12 +19,14 @@ class CountriesRepository {
           print(data);
         }
 
-        final casesData = data['data']['regional'] as Map<String, dynamic>;
-        if (casesData.isNotEmpty) {
-          return CountriesModal.fromMap(casesData);
-        } else {
-          throw Exception('No data available');
+        final casesDataList = data['data']['regional'] as List<dynamic>;
+        List<CountriesModal> countries = [];
+
+        for (var caseData in casesDataList) {
+          countries.add(CountriesModal.fromMap(caseData));
         }
+
+        return countries;
       } else {
         throw Exception('Failed to load data');
       }

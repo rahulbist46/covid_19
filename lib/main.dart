@@ -1,5 +1,6 @@
 import 'package:covid_tracker/services/bloc/Case_time/cases_time_bloc.dart';
 import 'package:covid_tracker/services/bloc/Unofficial_summery/unofficial_summery_bloc.dart';
+import 'package:covid_tracker/services/bloc/countries_bloc/countries_bloc.dart';
 import 'package:covid_tracker/view/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
     BlocProvider<UnofficialSummeryBloc>(
     create: (context) => UnofficialSummeryBloc(),
     ),
+          BlocProvider<CountriesBloc>(
+            create: (context) => CountriesBloc(),
+          ),
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
