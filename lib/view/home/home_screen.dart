@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
 import '../../services/bloc/Case_time/cases_time_bloc.dart';
 import '../../services/bloc/Unofficial_summery/unofficial_summery_bloc.dart';
 import 'bottom_button.dart';
 import 'pie_chart.dart';
 part'all_data.dart';
+part'top row.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -39,6 +39,7 @@ class HomePageState extends State<HomePage> {
         padding: EdgeInsets.all(11.0),
         child: Column(
           children: [
+            HomeTopRow(),
             SizedBox(height: 90,),
             PieChartScreen(),
             SizedBox(height: 30,),
