@@ -34,18 +34,18 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return  const Scaffold(
+    return   Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(11.0),
+        padding: const EdgeInsets.all(11.0),
         child: Column(
           children: [
-            HomeTopRow(),
-            SizedBox(height: 90,),
-            PieChartScreen(),
-            SizedBox(height: 30,),
-            AllData(),
-            SizedBox(height: 30,),
-            BottomButton(),
+            const HomeTopRow(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
+            const PieChartScreen(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+            const AllData(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+            const BottomButton(),
           ],
         ),
       ),

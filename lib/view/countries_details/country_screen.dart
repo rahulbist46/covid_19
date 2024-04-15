@@ -6,7 +6,7 @@ import '../Details/countries_all_details.dart';
 part 'Country_search_bar.dart';
 part 'Countries_List.dart';
 class CountryScreen extends StatefulWidget {
-  const CountryScreen({Key? key}) : super(key: key);
+  const CountryScreen({super.key});
 
   @override
   State<CountryScreen> createState() => _CountryScreenState();
@@ -24,15 +24,15 @@ class _CountryScreenState extends State<CountryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SearchBar(),
-              SizedBox(height: 30),
-              CountriesList(),
+              const SearchBar(),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+              const CountriesList(),
             ],
           ),
         ),
