@@ -10,4 +10,5 @@ sealed class CasesTimeEvent extends Equatable{
 
 
 class CaseTimeFetchData extends CasesTimeEvent{}
+
 class CaseTimeReset extends CasesTimeEvent{}

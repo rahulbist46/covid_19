@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../../services/bloc/Case_time/cases_time_bloc.dart';
 import '../../services/bloc/Unofficial_summery/unofficial_summery_bloc.dart';
+import '../../services/cubit/theme_services.dart';
 import 'bottom_button.dart';
 import 'pie_chart.dart';
 part'all_data.dart';
@@ -34,21 +35,29 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(11.0),
-        child: Column(
-          children: [
-            const HomeTopRow(),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
-            const PieChartScreen(),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
-            const AllData(),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
-            const BottomButton(),
-          ],
-        ),
-      ),
+    return BlocBuilder<ThemeServices, ThemeMode>(
+      builder: (context, themeMode) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text('Covid 19'),
+             backgroundColor: themeMode == ThemeMode.dark ? Colors.black : Colors.white,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(11.0),
+            child: Column(
+              children: [
+                const HomeTopRow(),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
+                const PieChartScreen(),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+                const AllData(),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+                const BottomButton(),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

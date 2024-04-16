@@ -10,7 +10,7 @@ part  'countries_state.dart';
 
 class CountriesBloc extends Bloc<CountriesEvent, CountriesState> {
   final CountriesRepository countriesRepository = CountriesRepository();
-  late List<CountriesModal> allCountries; // Store all countries for filtering
+  late List<CountriesModal> allCountries;
 
   CountriesBloc() : super(CountriesInitial()) {
     on<FetchCountries>(_handleFetchCountries);

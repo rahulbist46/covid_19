@@ -1,13 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 part 'unofficial-summary_Modal.dart';
+
 class UnofficialSummaryRepo {
   final Dio _dio = Dio();
 
   Future<UnofficialSummaryModal> fetchUnofficialSummeryModal() async {
     try {
-      final response = await _dio.get(
-          "https://api.rootnet.in/covid19-in/stats/latest");
+      final response =
+          await _dio.get("https://api.rootnet.in/covid19-in/stats/latest");
 
       if (response.statusCode == 200) {
         final Map<String, dynamic> data = response.data;
@@ -15,15 +16,13 @@ class UnofficialSummaryRepo {
           print(data);
         }
 
-        final List<
-            dynamic> caseDataList = data['data']['unofficial-summary'] as List<
-            dynamic>;
+        final List<dynamic> caseDataList =
+            data['data']['unofficial-summary'] as List<dynamic>;
 
         if (caseDataList.isNotEmpty) {
           // Assuming you only need the first element from the list
-          final Map<String, dynamic> caseData = caseDataList[0] as Map<
-              String,
-              dynamic>;
+          final Map<String, dynamic> caseData =
+              caseDataList[0] as Map<String, dynamic>;
           return UnofficialSummaryModal.fromMap(caseData);
         } else {
           throw Exception('No data available');

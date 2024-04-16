@@ -28,7 +28,8 @@ class CasesTimeBloc extends Bloc<CasesTimeEvent, CasesTimeState> {
       final SummaryModal summaryModal = await casesTimeSeriesRepository
           .fetchCasesTimeSeries();
       emit(CasesTimeSuccess(summaryModal));
-    } catch (e) {
+    }
+    catch (e) {
       emit(CasesTimeError(e));
     }
   }

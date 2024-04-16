@@ -21,7 +21,6 @@ class CountriesList extends StatelessWidget {
                   final country = countries[index];
                   return GestureDetector(
                     onTap: () {
-                      // Navigate to CountryDetailsScreen and pass the selected country as argument
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -46,7 +45,7 @@ class CountriesList extends StatelessWidget {
                               fontSize: 18,
                             ),
                           ),
-                          SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
+                          const SizedBox(height: 5),
                           Text(
                             'Total Confirmed: ${country.totalConfirmed}',
                             style: const TextStyle(fontSize: 16),
