@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
 import '../../services/bloc/Case_time/cases_time_bloc.dart';
 import '../../services/bloc/Unofficial_summery/unofficial_summery_bloc.dart';
 import 'bottom_button.dart';
 import 'pie_chart.dart';
 part'all_data.dart';
+part'top row.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -34,17 +34,18 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return  const Scaffold(
+    return   Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(11.0),
+        padding: const EdgeInsets.all(11.0),
         child: Column(
           children: [
-            SizedBox(height: 90,),
-            PieChartScreen(),
-            SizedBox(height: 30,),
-            AllData(),
-            SizedBox(height: 30,),
-            BottomButton(),
+            const HomeTopRow(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
+            const PieChartScreen(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+            const AllData(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+            const BottomButton(),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 part of 'country_screen.dart';
 
 class CountriesList extends StatelessWidget {
-  const CountriesList({Key? key}) : super(key: key);
+  const CountriesList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class CountriesList extends StatelessWidget {
                               fontSize: 18,
                             ),
                           ),
-                          const SizedBox(height: 5),
+                          SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
                           Text(
                             'Total Confirmed: ${country.totalConfirmed}',
                             style: const TextStyle(fontSize: 16),
