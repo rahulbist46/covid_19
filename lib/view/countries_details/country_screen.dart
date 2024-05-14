@@ -24,15 +24,15 @@ class _CountryScreenState extends State<CountryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.0),
           child: Column(
             children: [
-              const SearchBar(),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
-              const CountriesList(),
+              SearchBar(),
+              SizedBox(height: 30),
+              CountriesList(),
             ],
           ),
         ),

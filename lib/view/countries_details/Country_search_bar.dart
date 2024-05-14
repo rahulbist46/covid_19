@@ -1,7 +1,7 @@
 part of 'country_screen.dart';
 
 class SearchBar extends StatefulWidget {
-  const SearchBar({Key? key}) : super(key: key);
+  const SearchBar({super.key});
 
   @override
   State<SearchBar> createState() => _SearchBarState();

@@ -18,7 +18,6 @@ class CasesTimeSuccess extends CasesTimeState {
   const CasesTimeSuccess(this.summaryModal);
   final SummaryModal summaryModal;
 
-
   @override
   List<Object> get props => [summaryModal];
 }

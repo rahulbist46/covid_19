@@ -9,10 +9,10 @@ class PieChartScreen extends StatefulWidget {
   const PieChartScreen({super.key});
 
   @override
-  _PieChartScreenState createState() => _PieChartScreenState();
+  PieChartScreenState createState() => PieChartScreenState();
 }
 
-class _PieChartScreenState extends State<PieChartScreen> {
+class PieChartScreenState extends State<PieChartScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CasesTimeBloc, CasesTimeState>(

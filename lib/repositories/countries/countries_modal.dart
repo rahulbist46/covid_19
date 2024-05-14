@@ -39,7 +39,8 @@ class CountriesModal {
       CountriesModal(
         loc: loc ?? this.loc,
         confirmedCasesIndian: confirmedCasesIndian ?? this.confirmedCasesIndian,
-        confirmedCasesForeign: confirmedCasesForeign ?? this.confirmedCasesForeign,
+        confirmedCasesForeign:
+            confirmedCasesForeign ?? this.confirmedCasesForeign,
         discharged: discharged ?? this.discharged,
         deaths: deaths ?? this.deaths,
         totalConfirmed: totalConfirmed ?? this.totalConfirmed,
