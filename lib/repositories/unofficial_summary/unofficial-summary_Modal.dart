@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 part of 'unofficial_summary_repo.dart';
 
 class UnofficialSummaryModal {

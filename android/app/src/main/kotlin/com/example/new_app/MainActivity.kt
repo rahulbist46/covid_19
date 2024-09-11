@@ -1,4 +1,4 @@
-package com.example.new_app
+package com.coviid_19
 
 import io.flutter.embedding.android.FlutterActivity
 

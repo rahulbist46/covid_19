@@ -27,7 +27,7 @@ class SplashScreenState extends State<SplashScreen> with TickerProviderStateMixi
 
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     Timer(const Duration(seconds: 5), () => Navigator.push(
         context, MaterialPageRoute(

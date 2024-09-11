@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 part of 'country_screen.dart';
 
 class SearchBar extends StatefulWidget {

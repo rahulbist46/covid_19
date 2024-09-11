@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 part of 'home_screen.dart';
 
 class HomeTopRow extends StatefulWidget {
